@@ -2,10 +2,10 @@ import userModel from "../models/userModel.js";
 
 export const getUserData = async (req, res) => {
   try {
-    const { userId } = req.body;
+    const userId = req.userId;
     const user = await userModel.findById(userId);
     if (!user) {
-      res.json({ success: false, message: "User Not Found" });
+      return res.json({ success: false, message: "User Not Found" });
     }
     res.json({
       success: true,
