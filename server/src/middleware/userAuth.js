@@ -14,7 +14,6 @@ const userAuth = async (req, res, next) => {
         req.userId = tokenDecode.id;
       } else {
         req.body.userId = tokenDecode.id;
-        console.log(tokenDecode);
       }
     } else {
       return res.json({

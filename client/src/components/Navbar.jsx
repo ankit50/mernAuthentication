@@ -13,7 +13,7 @@ const Navbar = () => {
       axios.defaults.withCredentials = true;
       const { data } = await axios.post(
         backendUrl + "/api/auth/send-verify-otp",
-        { userId: "d" }
+        { userId: "" }
       );
       if (data.success) {
         navigate("/email-verify");
