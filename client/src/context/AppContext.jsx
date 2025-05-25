@@ -10,6 +10,7 @@ export const AppContextProvider = (props) => {
   const [userData, setUserData] = useState(false);
 
   const getAuthState = async () => {
+    axios.defaults.withCredentials = true;
     const { data } = await axios.get(backendUrl + "/api/auth/is-auth");
     if (data.success) {
       setIsLoggedIn(true);
